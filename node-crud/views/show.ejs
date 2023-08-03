@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+  <h1 style="text-align: center; margin-top: 3px; margin-bottom: 3px;">WE THE DUMBS CRUD</h1>
+    <div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            
+            <th scope="col">Name</th>
+            <th scope="col">Roll Number</th>
+            <th scope="col">Percentage</th>
+            <th scope="col"> Options</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% for (let user of data) { %>
+          <tr>
+            <td> <%= user.Name %></td>
+            <td> <%= user.Rollno %></td>
+            <td> <%= user.Percentage %></td>
+            <td>
+                <button type="button" class="btn btn-success my-3"> <a href="/edit/<%= user._id %>/editform" style="text-decoration:None ; color: white;">Edit</a> </button>
+               
+              
+                <button type="button" class="btn btn-danger"><a href="/delete/<%= user._id %>" style="text-decoration:None ; color: white;">Delete</a></button>
+           
+            
+        </td>
+           </tr>
+           
+           <% } %>
+        </tbody>
+      </table>
+      <form action="/form">
+        <button type="submit" class="btn btn-primary"> Add</button>
+      </form>
+    </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
